@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap');
+body > #root > .altura {
+    height: 100vh;
+    text-align: center;
+  }
+  
+  body > #root > .altura > .camada > .card {
+    display: inline-block;
+  }
+  .container-fluid.altura.centro.login {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .margin-top-10 {
+    margin-top: 10px;
+  }
+  
+  .margin-top-15\% {
+    margin-top: 10%;
+  }
+  
+  div.card.margin-top-15\% {
+    border-radius: 15px;
+    min-width: 350px;
+  }
+  
+  .card-body > form > div {
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .a-esquerda {
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  .camada {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+  }
+  
+  .login {
+    background-image: url('https://wallpaperset.com/w/full/b/7/4/462755.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .links{
+    margin-top: 10px;
+  }
+  
+  .links a:hover {
+    text-decoration: none;
+    color: #3156a0;
+  }

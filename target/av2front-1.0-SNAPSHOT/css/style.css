@@ -1,0 +1,124 @@
+
+body {
+  height: 100vh;
+}
+.centro{
+  text-align: center;
+}
+
+div.container-fluid {
+  min-height: 92%;
+}
+
+div.container-fluid.black {
+  background-color: #131111;
+  color: #fff;
+}
+
+div.row {
+  margin: 0;
+}
+div.card.col-1.av {
+  background-color: #c54f4f; 
+  color: white; 
+  margin: 5px;
+}
+
+div.card.col-1.av:hover {
+  background-color: #2b7aca;
+  transition: 500ms;
+}
+
+
+div.card.col-1.desvio {
+  background-color: #3d4ca2; 
+  color: white; 
+  margin: 5px;
+}
+
+div.card.col-1.desvio:hover {
+  background-color: #738faa;
+  transition: 500ms;
+}
+
+div.card.col-1.avs {
+  background-color: #57a1b8; 
+  color: white; 
+  margin: 5px;
+}
+
+div.card.col-1.avs:hover {
+  background-color: #2b7aca;
+  transition: 500ms;
+}
+
+ /* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+} 
+
+div.col-12.centro {
+  text-align: center;
+}
+
+div#average {
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.titulo-header {
+  font-weight: bolder;
+}
+
+div#notas {
+  text-align: center;
+}
+
+.pequeno {
+  font-size: 10px;
+}
+
+.notas-area {
+  padding-top: 10px;
+}
+
+.card {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+body > div > div > div.card.col-3.centro {
+  max-height: 200px;
+}
+
+div.card.col-3.centro > * {
+  margin-top: 10px;
+  text-align: center;
+}
+
+form {
+  display: inline-block;
+  width: 300px;
+}
+
+
+.erro {
+  color: red;
+}
