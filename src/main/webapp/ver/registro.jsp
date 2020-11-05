@@ -17,7 +17,9 @@
     <body>
         <% 
             try {
-                Usuario user = new UsuarioDAO().registrar(request.getParameter("email"), request.getParameter("nome"), request.getParameter("senha"), 0);
+                Usuario user = new UsuarioDAO().registrar(request.getParameter("email"), 
+                request.getParameter("nome"), request.getParameter("senha"), 0);
+                
                 String destPage = "../login.jsp";
 
                 if (user != null) {
@@ -25,7 +27,7 @@
                     session.setAttribute("logado", "1");
                     destPage = "../dashboard.jsp";
                 } else {
-                    String message = "E-mail ou senha inválido.";
+                    String message = "Não foi possível efetuar o cadastro.";
                     session.setAttribute("message", message);
                 }
                 response.sendRedirect(destPage);

@@ -41,11 +41,11 @@ public class UsuarioDAO {
     }
     
     /**
-     *
+     * Função responsável por efetuar o registro do aluno no banco de dados
      * @param email
      * @param nome
      * @param senha
-     * @param papel
+     * @param papel padrão é 0
      * @return
      * @throws SQLException
      * @throws ClassNotFoundException

@@ -7,7 +7,7 @@
 
 
 ## Executando localmente
-Na interface do NetBeans clicar 
+No menu superior, selecionar `Run(executar)`, e então `Run Project(av2front)`.
 
 ### URL disponíveis
 1. INDEX : http://localhost:8080/av2front/
