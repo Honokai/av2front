@@ -20,3 +20,5 @@ No menu superior, selecionar `Run(executar)`, e então `Run Project(av2front)`.
 ### Autenticação níveis de acesso
 1. `777` - Acesso a todas as urls
 2. `0` - Acesso a url de visualização de notas
+
+**Obs.: Demais orientações estarão no arquivo disponibilizado na plataforma da faculdade**
