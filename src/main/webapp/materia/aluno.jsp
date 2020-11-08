@@ -27,7 +27,7 @@
             Statement consulta = (Statement) conexao.createStatement();
             List<Map<String, Object>> linhas = new ArrayList<>();
             ResultSet resultado = consulta.executeQuery("SELECT d.id AS id, m.materia AS nome FROM materias m JOIN disciplina d " +
-            "ON m.materia=d.disciplina WHERE d.aluno_id=(SELECT aluno.id FROM aluno WHERE id="+request.getParameter("aluno_id")+")");
+            "ON m.materia=d.disciplina WHERE d.aluno_id=(SELECT aluno.id FROM aluno WHERE id="+request.getParameter("aluno_id")+") order by d.id desc");
             ResultSetMetaData meta = resultado.getMetaData();
             Integer contColuna = meta.getColumnCount();
             while(resultado.next()){

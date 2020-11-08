@@ -76,7 +76,6 @@
                       <option value=""></option>
                       <option value="adicionar">Adicionar nota</option>
                       <option value="atualizar">Atualizar nota</option>
-                      <option value="excluir">Excluir nota</option>
                   </select>
                 </div>
                 <div class="form-group" style="text-align: center">
@@ -86,17 +85,17 @@
                   </select>
                 </div>
                 <div class="form-group" style="text-align: center">
-                    <select type="text" class="form-control custom-select" name="id_disciplina" id="id_disciplina" hidden>
+                    <select class="form-control custom-select" name="id_disciplina" id="id_disciplina" hidden>
                         <option value=""></option>
                     </select>
                     <label for="disciplina">Disciplina</label>
-                    <select type="text" class="form-control custom-select" name="disciplina" id="disciplina">
+                    <select class="form-control custom-select" name="disciplina" id="disciplina">
                         <option value=""></option>
                     </select>
                 </div>
                 <div class="form-group" style="text-align: center">
                     <label for="professor">Professor</label>
-                    <select type="text" class="form-control custom-select" name="professor" id="professor">
+                    <select class="form-control custom-select" name="professor" id="professor">
                         <option value=""></option>
                     </select>
                 </div>
@@ -124,8 +123,7 @@
                         <input class="form-control" id="aps2" name="aps2" placeholder="Nota aps2" pattern="[0-1]?[0-8][.][0-9][0-9]"/>
                     </div>
                 </div>
-                
-                <button type="submit" id="submit" class="btn btn-primary">Adicionar/Atualizar</button>
+                <button type="submit" id="submit" class="btn btn-primary">Criar/Atualizar registro</button>
                 <button type="submit" id="apagar" class="btn btn-danger">Apagar registro</button>
             </form>
         </div>

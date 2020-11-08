@@ -56,7 +56,6 @@ window.addEventListener('load', () => {
                 elemento.innerHTML = ''+resposta[index].nome+''
                 selectdisciplina.add(elemento)
                 if(document.getElementById('acao').value == "atualizar") {
-                    console.log("Id da disciplina " +resposta[index].id)
                     let selectCopia = document.createElement('option')
                     selectCopia.value = resposta[index].id
                     selectCopia.innerHTML = ''+resposta[index].nome+''

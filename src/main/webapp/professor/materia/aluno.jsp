@@ -28,7 +28,7 @@
             List<Map<String, Object>> linhas = new ArrayList<>();
             ResultSet resultado = consulta.executeQuery("select p.id, p.professor from professor p left join disciplina d" +
             " on p.id=d.professor_id where d.aluno_id="+request.getParameter("aluno_id")+" and d.disciplina='"+
-            request.getParameter("disciplina")+"'");
+            request.getParameter("disciplina")+"' group by p.professor");
             ResultSetMetaData meta = resultado.getMetaData();
             Integer contColuna = meta.getColumnCount();
             while(resultado.next()){

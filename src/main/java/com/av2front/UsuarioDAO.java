@@ -31,7 +31,6 @@ public class UsuarioDAO {
         if (result.next()) {
             usuario = new Usuario();
             usuario.setNome(result.getString("nome"));
-            usuario.setCpf(result.getString("cpf"));
             usuario.setAcesso(result.getInt("papel"));
         }
  
