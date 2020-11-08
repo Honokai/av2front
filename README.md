@@ -27,15 +27,15 @@ public class BancoConexao {
 
 ### Fluxo Gerenciamento de notas
 1. Escolha a opção
-    1. Adicionar caso queira inserir um registro de nota para um aluno já cadastrado
-    2. Atualizar caso queira realizar uma alteração de um registro existente no banco
+    1. Adicionar caso queira inserir um registro de `nota` para um aluno já cadastrado
+    2. Atualizar caso queira realizar uma **alteração** de um registro existente no banco
 2. Escolha o aluno das opções disponíveis
 3. Escolha a disciplina
     1. Caso tenha escolhido a opção adicionar, será então apresentando o nome de todas as matérias disponíveis
     2. Caso tenha sido atualizar, então só será apresentado disciplinas na qual o aluno já está cursando, ou tem registro, este sendo ordernado do registro mais novo para o antigo
-4. Escolha um professor, será carregado nos mesmos critérios do item acima, baseado na ação selecionada
+4. Escolha um professor, será **carregado nos mesmos critérios do item acima**, baseado na ação selecionada
 5. Informe as notas, o campo não pode ficar vazio, quando não houver notas para as demais avaliações, informe **0.00**
-    1. Observação, caso tente inserir uma nota para **av1 > 7** ou **aps1 > 3** não será possível inserir ou atualizar o registro, o mesmo para para **av2 > 8** e **aps2 > 2**
+    1. Observação, caso tente inserir uma nota para **av1 > 7** ou **aps1 > 3** não será possível inserir ou atualizar o registro, o mesmo para **av2 > 8** e **aps2 > 2**
 6. Aperte em `criar/atualizar registro`
 
 #### Exclusão
@@ -49,9 +49,9 @@ public class BancoConexao {
 1. INDEX : http://localhost:8080/av2front/
 2. LOGIN : http://localhost:8080/av2front/login.jsp
 3. REGISTRAR : http://localhost:8080/av2front/registrar.jsp
-4. GERENCIAR NOTAS (somente autenticado) : http://localhost:8080/av2front/gerenciarnotas.jsp
-5. VISUALIZAR NOTAS (somente autenticado) : http://localhost:8080/av2front/visualizarnotas.jsp
-6. DASHBOARD (somente autenticado) : http://localhost:8080/av2front/dashboard.jsp
+4. GERENCIAR NOTAS (somente autenticado e com nível de acesso necessário) : http://localhost:8080/av2front/gerenciarnotas.jsp
+5. VISUALIZAR NOTAS (somente autenticado e com nível de acesso necessário) : http://localhost:8080/av2front/visualizarnotas.jsp
+6. DASHBOARD (somente autenticado e com nível de acesso necessário) : http://localhost:8080/av2front/dashboard.jsp
 
 ### Autenticação níveis de acesso
 1. `777` - Acesso a todas as urls
