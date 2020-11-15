@@ -22,7 +22,7 @@ window.addEventListener('load', function() {
             if(resposta.length > 0) {
                 document.getElementById('notas').className = 'card'
                 document.getElementById('notas').innerHTML = ""
-                insereNotas(document.getElementById('notas'),resposta)
+                insereNotas(document.getElementById('notas'), resposta)
             } else { 
                 document.getElementById('notas').innerHTML = `
                 <div class="row">
