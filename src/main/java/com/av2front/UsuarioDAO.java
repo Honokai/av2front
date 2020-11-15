@@ -30,6 +30,7 @@ public class UsuarioDAO {
  
         if (result.next()) {
             usuario = new Usuario();
+            usuario.setId(Integer.parseInt(result.getString("id")));
             usuario.setNome(result.getString("nome"));
             usuario.setAcesso(result.getInt("papel"));
         }

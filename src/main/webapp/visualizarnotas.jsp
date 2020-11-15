@@ -44,7 +44,12 @@
                 <%  } else {
                             
                 %>
-                
+                <div class="col-12"> 
+                            <div id="notas" style="color: #000;">
+
+                            </div>
+                        </div>
+                <h1><span style="color:red" id="usuario_id"><% out.print(usuario.getId());%></span></h1>
               <% } 
                     } 
               } else {
