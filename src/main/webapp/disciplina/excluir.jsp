@@ -4,6 +4,7 @@
     Author     : eff
 --%>
 
+<%@page import="com.av2front.BancoConexao"%>
 <%@page import="java.util.Enumeration"%>
 <%@page import="com.fasterxml.jackson.databind.ObjectMapper"%>
 <%@page import="java.util.List"%>
@@ -19,9 +20,7 @@
     <body>
         <% 
         try{
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conexao = (Connection)DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/universidade?serverTimezone=America/Fortaleza",
-                "root","865358");
+            Connection conexao = new BancoConexao().conexao();
             String query = "Delete from disciplina where id=? and aluno_id=? and professor_id=?";
             
             PreparedStatement consulta = (PreparedStatement) conexao.prepareStatement(query);

@@ -4,6 +4,7 @@
     Author     : eff
 --%>
 
+<%@page import="com.av2front.BancoConexao"%>
 <%@page import="com.fasterxml.jackson.databind.ObjectMapper"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="java.util.Map"%>
@@ -23,9 +24,7 @@
         <% 
         String valor = "Coloquei um valor aqui";
         try{
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conexao = (Connection)DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/universidade?serverTimezone=America/Fortaleza",
-                "root","865358");
+            Connection conexao = new BancoConexao().conexao();
             Statement consulta = (Statement) conexao.createStatement();
             List<Map<String, Object>> linhas = new ArrayList<>();
             ResultSet resultado = consulta.executeQuery("SELECT id,nome as aluno FROM aluno");
