@@ -22,7 +22,7 @@ public class UsuarioDAO {
         String sql = "SELECT * FROM usuarios WHERE email = ? and senha = ?";
         PreparedStatement statement = conexao.prepareStatement(sql);
         statement.setString(1, email);
-        statement.setString(2, encrypt(senha));
+        statement.setString(2, senha);
  
         ResultSet result = statement.executeQuery();
  
@@ -65,7 +65,7 @@ public class UsuarioDAO {
              statement = conexao.prepareStatement(insert);
              statement.setString(1, nome);
              statement.setString(2, email);
-             statement.setString(3, encrypt(senha).equals("falha")?"":encrypt(senha));
+             statement.setString(3, senha);
              statement.setInt(4, papel);
              if(statement.executeUpdate() > 0){
                 usuario.setNome(nome);
@@ -77,33 +77,4 @@ public class UsuarioDAO {
          }
     }
     
-    /**
-     * Encripta uma senha para armazenamento no banco de dados
-     * @param senha
-     * @return String
-     */
-    private String encrypt(String senha) {
-        try {
-            // Create MessageDigest instance for MD5
-            MessageDigest md = MessageDigest.getInstance("MD5");
-            //Add password bytes to digest
-            md.update(senha.getBytes());
-            //Get the hash's bytes 
-            byte[] bytes = md.digest();
-            //This bytes[] has bytes in decimal format;
-            //Convert it to hexadecimal format
-            StringBuilder sb = new StringBuilder();
-            for(int i=0; i< bytes.length ;i++)
-            {
-                sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
-            }
-            //Get complete hashed password in hex format
-            String generatedPassword = sb.toString();
-            return generatedPassword;
-        } 
-        catch (NoSuchAlgorithmException e) 
-        {
-            return "falha";
-        }
-    }
 }
