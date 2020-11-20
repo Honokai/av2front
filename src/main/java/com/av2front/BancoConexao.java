@@ -26,7 +26,7 @@ public class BancoConexao {
     }
     
     public Connection conexao() throws ClassNotFoundException, SQLException {
-        Class.forName("com.mysql.jdbc.Driver");
+        Class.forName("com.mysql.cj.jdbc.Driver");
         return (Connection) DriverManager.getConnection("jdbc:mysql://"+getServidor()
                 +":"+ getPorta()+"/"+getBanco()+"?serverTimezone=America/Fortaleza", getLogin(), getSenha());
     }

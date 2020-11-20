@@ -9,20 +9,31 @@ CREATE TABLE IF NOT EXISTS universidade.curso
     curso varchar(120) not null
 );
 
+CREATE TABLE IF NOT EXISTS usuarios
+(
+    id    int auto_increment
+        primary key,
+    email varchar(45) not null,
+    senha varchar(200) not null,
+    nome  varchar(45) not null,
+    papel int(11)         not null
+);
+
+
 CREATE TABLE IF NOT EXISTS universidade.aluno
 (
     id       int auto_increment
         primary key,
     nome     varchar(120) not null,
     curso_id int          not null,
-    constraint aluno_ibfk_1
-        foreign key (curso_id) references curso (id)
+    usuario_id int not null,
+    constraint aluno_ibfk_1 foreign key (curso_id) references curso (id),
+    constraint usuario_ibfk_1 foreign key (usuario_id) references usuarios (id)
 );
 
 CREATE TABLE IF NOT EXISTS universidade.materias
 (
-    id      int auto_increment
-        primary key,
+    id int auto_increment primary key,
     materia varchar(150) null,
     constraint materia
         unique (materia)
@@ -87,16 +98,6 @@ BEGIN
     end if;
 end;
 
-CREATE TABLE IF NOT EXISTS usuarios
-(
-    id    int auto_increment
-        primary key,
-    email varchar(45) not null,
-    senha varchar(45) not null,
-    nome  varchar(45) not null,
-    papel int(11)         not null
-);
-
 # Inserções
 
 INSERT INTO universidade.materias (materia) VALUES ('Helio');
@@ -104,32 +105,40 @@ INSERT INTO universidade.materias (materia) VALUES ('Internet');
 INSERT INTO universidade.materias (materia) VALUES ('Neomica');
 INSERT INTO universidade.materias (materia) VALUES ('Terrmanh');
 
-INSERT INTO universidade.usuarios (id, email, senha, nome, papel) VALUES (5, 'admin@com', '45892a6ad3ac7f33afbe77e33dbc5f5e', 'Administrador', 777);
+INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('admin@com', '45892a6ad3ac7f33afbe77e33dbc5f5e', 'Administrador', 777);
+INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('erick@com', '45892a6ad3ac7f33afbe77e33dbc5f5e', 'Aluno', 0);
+INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('alica@com', '45892a6ad3ac7f33afbe77e33dbc5f5e', 'Aluno', 0);
+INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('lion@com', '45892a6ad3ac7f33afbe77e33dbc5f5e', 'Aluno', 0);
+INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('renoma@com', '45892a6ad3ac7f33afbe77e33dbc5f5e', 'Aluno', 0);
+INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('triturador@com', '45892a6ad3ac7f33afbe77e33dbc5f5e', 'Aluno', 0);
+INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('Terma@com', '45892a6ad3ac7f33afbe77e33dbc5f5e', 'Aluno', 0);
+INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('Focado@com', '45892a6ad3ac7f33afbe77e33dbc5f5e', 'Aluno', 0);
+INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('perdido@com', '45892a6ad3ac7f33afbe77e33dbc5f5e', 'Aluno', 0);
+INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('caiu@com', '45892a6ad3ac7f33afbe77e33dbc5f5e', 'Aluno', 0);
+INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('torcedor@com', '45892a6ad3ac7f33afbe77e33dbc5f5e', 'Aluno', 0);
+INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('trintes@com', '45892a6ad3ac7f33afbe77e33dbc5f5e', 'Aluno', 0);
+INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('lounher@com', '45892a6ad3ac7f33afbe77e33dbc5f5e', 'Aluno', 0);
 
-INSERT INTO universidade.curso (id, curso) VALUES (1, 'Engenharia da');
-INSERT INTO universidade.curso (id, curso) VALUES (2, 'Jornalismo');
-INSERT INTO universidade.curso (id, curso) VALUES (3, 'Informatica');
-INSERT INTO universidade.curso (id, curso) VALUES (4, 'Terraria');
-INSERT INTO universidade.curso (id, curso) VALUES (5, 'Tormentess');
-INSERT INTO universidade.curso (id, curso) VALUES (6, 'Engenharia da');
-INSERT INTO universidade.curso (id, curso) VALUES (7, 'Jornalismo');
-INSERT INTO universidade.curso (id, curso) VALUES (8, 'Informatica');
-INSERT INTO universidade.curso (id, curso) VALUES (9, 'Terraria');
-INSERT INTO universidade.curso (id, curso) VALUES (10, 'Tormentess');
-INSERT INTO universidade.curso (id, curso) VALUES (11, 'Letras');
+INSERT INTO universidade.curso (curso) VALUES ('Engenharia da comunica');
+INSERT INTO universidade.curso (curso) VALUES ('Jornalismo');
+INSERT INTO universidade.curso (curso) VALUES ('Informatica');
+INSERT INTO universidade.curso (curso) VALUES ('Terraria');
+INSERT INTO universidade.curso (curso) VALUES ('Tormentess');
+INSERT INTO universidade.curso (curso) VALUES ('Engenharia Elétrica');
 
-INSERT INTO universidade.aluno (id, nome, curso_id) VALUES (1, 'ERICK NOMADA', 1);
-INSERT INTO universidade.aluno (id, nome, curso_id) VALUES (2, 'Alica Mento', 2);
-INSERT INTO universidade.aluno (id, nome, curso_id) VALUES (3, 'Lion', 2);
-INSERT INTO universidade.aluno (id, nome, curso_id) VALUES (4, 'Renoma', 3);
-INSERT INTO universidade.aluno (id, nome, curso_id) VALUES (5, 'Triturador', 2);
-INSERT INTO universidade.aluno (id, nome, curso_id) VALUES (6, 'Terma Testao', 3);
-INSERT INTO universidade.aluno (id, nome, curso_id) VALUES (7, 'Focado', 2);
-INSERT INTO universidade.aluno (id, nome, curso_id) VALUES (8, 'Perdido no ceu', 3);
-INSERT INTO universidade.aluno (id, nome, curso_id) VALUES (9, 'Caiu passou', 1);
-INSERT INTO universidade.aluno (id, nome, curso_id) VALUES (10, 'Torcedor', 2);
-INSERT INTO universidade.aluno (id, nome, curso_id) VALUES (11, 'Trintes', 2);
-INSERT INTO universidade.aluno (id, nome, curso_id) VALUES (12, 'Lounher', 3);
+
+INSERT INTO universidade.aluno (id, nome, curso_id, usuario_id) VALUES (1, 'ERICK NOMADA', 1, 2);
+INSERT INTO universidade.aluno (id, nome, curso_id, usuario_id) VALUES (2, 'Alica Mento', 2, 3);
+INSERT INTO universidade.aluno (id, nome, curso_id, usuario_id) VALUES (3, 'Lion', 2, 4);
+INSERT INTO universidade.aluno (id, nome, curso_id, usuario_id) VALUES (4, 'Renoma', 3, 5);
+INSERT INTO universidade.aluno (id, nome, curso_id, usuario_id) VALUES (5, 'Triturador', 2, 6);
+INSERT INTO universidade.aluno (id, nome, curso_id, usuario_id) VALUES (6, 'Terma Testao', 3, 7);
+INSERT INTO universidade.aluno (id, nome, curso_id, usuario_id) VALUES (7, 'Focado', 2, 8);
+INSERT INTO universidade.aluno (id, nome, curso_id, usuario_id) VALUES (8, 'Perdido no ceu', 3, 9);
+INSERT INTO universidade.aluno (id, nome, curso_id, usuario_id) VALUES (9, 'Caiu passou', 1, 10);
+INSERT INTO universidade.aluno (id, nome, curso_id, usuario_id) VALUES (10, 'Torcedor', 2, 11);
+INSERT INTO universidade.aluno (id, nome, curso_id, usuario_id) VALUES (11, 'Trintes', 2, 12);
+INSERT INTO universidade.aluno (id, nome, curso_id, usuario_id) VALUES (12, 'Lounher', 3, 13);
 
 INSERT INTO universidade.professor (id, professor) VALUES (1, 'Kiro');
 INSERT INTO universidade.professor (id, professor) VALUES (2, 'tetso');
