@@ -58,3 +58,7 @@ public class BancoConexao {
 2. `0` - Acesso a url de visualização de notas
 
 **Obs.: Demais orientações estarão no arquivo disponibilizado na plataforma da faculdade**
+
+## Integrantes 
+Emerson Ferreira Fernandes - 2017200458
+Moises Ximenes Albuquerque - 2017201214
