@@ -1,4 +1,23 @@
 window.addEventListener('load', function() {
+    let disciplinausuario = new XMLHttpRequest()
+        disciplinausuario.open("GET", "http://localhost:8080/av2front/disciplina/recuperaalunousuario.jsp?usuario="+document.getElementById('idusuario').value)
+        disciplinausuario.send()
+        disciplinausuario.addEventListener('load', () => {
+            let resposta = JSON.parse(disciplinausuario.responseText)
+            if(resposta.length > 0) {
+                document.getElementById('alunonotas').className = 'card'
+                document.getElementById('alunonotas').innerHTML = ""
+                insereNotas(document.getElementById('alunonotas'), resposta)
+            } else { 
+                document.getElementById('alunonotas').innerHTML = `
+                <div class="row">
+                    <div class="col-12 titulo-header">Não há registro para o aluno informado.</div>
+                </div>
+                `
+                document.getElementById('alunonotas').className = 'card'
+            }
+        })
+    
     let aluno = new XMLHttpRequest()
     let selectaluno = document.getElementById('selectaluno')
     aluno.open("GET","http://localhost:8080/av2front/aluno/todos.jsp")
