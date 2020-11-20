@@ -60,5 +60,5 @@ public class BancoConexao {
 **Obs.: Demais orientações estarão no arquivo disponibilizado na plataforma da faculdade**
 
 ## Integrantes 
-Emerson Ferreira Fernandes - 2017200458
+Emerson Ferreira Fernandes - 2017200458  
 Moises Ximenes Albuquerque - 2017201214
