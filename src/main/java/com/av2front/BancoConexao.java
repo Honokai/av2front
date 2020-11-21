@@ -22,7 +22,7 @@ public class BancoConexao {
         this.porta = "3306";
         this.banco = "universidade";
         this.login = "root";
-        this.senha = "root";
+        this.senha = "865358";
     }
     
     public Connection conexao() throws ClassNotFoundException, SQLException {

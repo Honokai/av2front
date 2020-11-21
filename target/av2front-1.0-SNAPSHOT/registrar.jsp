@@ -27,23 +27,23 @@
                 <div class="card-body">
                     <h5 class="card-title">Registro</h5>
                     <form action="ver/registro.jsp" method="get">
-                        <div class="a-esquerda" id="nome">
-                            <label for="usuario">Nome</label>
+                        <div class="a-esquerda" id="nomediv">
+                            <label>Nome</label>
                             <input class="form-control" id="nome" name="nome" type="text" placeholder="nome" required> 
                         </div>
-                        <div class="a-esquerda" id="nome">
-                            <label for="usuario">E-mail</label>
+                        <div class="a-esquerda" id="nomeemail">
+                            <label>E-mail</label>
                             <input class="form-control" id="email" name="email" type="email" placeholder="E-mail" required> 
                         </div>
-                        <div class="a-esquerda" id="nome">
-                            <label for="usuario">Confirme o E-mail</label>
+                        <div class="a-esquerda" id="nomeemailconfirmacao">
+                            <label>Confirme o E-mail</label>
                             <input class="form-control" id="emailconf" name="emailconf" type="email" placeholder="Usuário" required> 
                         </div>
-                        <div class="a-esquerda" id="pass">
+                        <div class="a-esquerda" id="passdiv">
                             <label for="senha">Senha</label>
                             <input class="form-control" id="senha"  name="senha" type="password" placeholder="Senha" required> 
                         </div>
-                        <div class="a-esquerda" id="pass">
+                        <div class="a-esquerda" id="passdivconf">
                             <label for="senha">Confirmar senha</label>
                             <input class="form-control" id="senhaconf"  name="senhaconf" type="password" placeholder="Senha" required> 
                         </div>

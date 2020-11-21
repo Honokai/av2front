@@ -43,7 +43,9 @@ CREATE TABLE IF NOT EXISTS universidade.professor
 (
     id        int auto_increment
         primary key,
-    professor varchar(120) not null
+    professor varchar(120) not null,
+    usuario_id int not null,
+    constraint usuario_ibfk_1 foreign key (usuario) references usuarios (id)
 );
 
 CREATE TABLE IF NOT EXISTS universidade.disciplina
@@ -106,18 +108,24 @@ INSERT INTO universidade.materias (materia) VALUES ('Neomica');
 INSERT INTO universidade.materias (materia) VALUES ('Terrmanh');
 
 INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('admin@com', '123456', 'Administrador', 777);
-INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('erick@com', '123456', 'Aluno', 0);
-INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('alica@com', '123456', 'Aluno', 0);
-INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('lion@com', '123456', 'Aluno', 0);
-INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('renoma@com', '123456', 'Aluno', 0);
-INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('triturador@com', '123456', 'Aluno', 0);
-INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('Terma@com', '123456', 'Aluno', 0);
-INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('Focado@com', '123456', 'Aluno', 0);
-INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('perdido@com', '123456', 'Aluno', 0);
-INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('caiu@com', '123456', 'Aluno', 0);
-INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('torcedor@com', '123456', 'Aluno', 0);
-INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('trintes@com', '123456', 'Aluno', 0);
-INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('lounher@com', '123456', 'Aluno', 0);
+INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('erick@com', '123456', 'Erica', 0);
+INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('alica@com', '123456', 'Alica', 0);
+INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('lion@com', '123456', 'Lion', 0);
+INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('renoma@com', '123456', 'Renoma', 0);
+INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('triturador@com', '123456', 'Triturador', 0);
+INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('terma@com', '123456', 'Terma', 0);
+INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('focado@com', '123456', 'Focado', 0);
+INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('perdido@com', '123456', 'Perdido', 0);
+INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('caiu@com', '123456', 'Caiu', 0);
+INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('torcedor@com', '123456', 'Torcedor', 0);
+INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('trintes@com', '123456', 'Trintes', 0);
+INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('lounher@com', '123456', 'Lounher', 0);
+INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('kiro@com', '123456', 'Kiro', 777);
+INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('tetso@com', '123456', 'Tetso', 777);
+INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('chroma@com', '123456', 'Chroma', 777);
+INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('kronhas@com', '123456', 'Kronhas', 777);
+INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('leskmi@com', '123456', 'Leskmi', 777);
+INSERT INTO universidade.usuarios (email, senha, nome, papel) VALUES ('koenrmt@com', '123456', 'Koenrmt', 777);
 
 INSERT INTO universidade.curso (curso) VALUES ('Engenharia da comunica');
 INSERT INTO universidade.curso (curso) VALUES ('Jornalismo');
@@ -140,20 +148,20 @@ INSERT INTO universidade.aluno (id, nome, curso_id, usuario_id) VALUES (10, 'Tor
 INSERT INTO universidade.aluno (id, nome, curso_id, usuario_id) VALUES (11, 'Trintes', 2, 12);
 INSERT INTO universidade.aluno (id, nome, curso_id, usuario_id) VALUES (12, 'Lounher', 3, 13);
 
-INSERT INTO universidade.professor (id, professor) VALUES (1, 'Kiro');
-INSERT INTO universidade.professor (id, professor) VALUES (2, 'tetso');
-INSERT INTO universidade.professor (id, professor) VALUES (3, 'chroma');
-INSERT INTO universidade.professor (id, professor) VALUES (4, 'Kronhas');
-INSERT INTO universidade.professor (id, professor) VALUES (5, 'Lkisje');
-INSERT INTO universidade.professor (id, professor) VALUES (6, 'Koenrmt');
+INSERT INTO universidade.professor (id, professor, usuario_id) VALUES (1, 'Kiro', 14);
+INSERT INTO universidade.professor (id, professor, usuario_id) VALUES (2, 'Tetso', 15);
+INSERT INTO universidade.professor (id, professor, usuario_id) VALUES (3, 'Chroma', 16);
+INSERT INTO universidade.professor (id, professor, usuario_id) VALUES (4, 'Kronhas', 17);
+INSERT INTO universidade.professor (id, professor, usuario_id) VALUES (5, 'Leskmi', 18);
+INSERT INTO universidade.professor (id, professor, usuario_id) VALUES (6, 'Koenrmt', 19);
 
-INSERT INTO universidade.disciplina (id, disciplina, av1, av2, av3, aps1, aps2, aluno_id, professor_id) VALUES (1, 'Internet', 6.89, 7, 8.95, 2.1, 2, 5, 2);
-INSERT INTO universidade.disciplina (id, disciplina, av1, av2, av3, aps1, aps2, aluno_id, professor_id) VALUES (3, 'Terrmanh', 6, 7, 8.95, 2.1, 2, 8, 2);
-INSERT INTO universidade.disciplina (id, disciplina, av1, av2, av3, aps1, aps2, aluno_id, professor_id) VALUES (5, 'Helio', 4.7, 3.9, 8, 3, 2, 9, 2);
-INSERT INTO universidade.disciplina (id, disciplina, av1, av2, av3, aps1, aps2, aluno_id, professor_id) VALUES (8, 'Neomica', 5.78, 4.99, 7.67, 2.1, 2, 7, 2);
-INSERT INTO universidade.disciplina (id, disciplina, av1, av2, av3, aps1, aps2, aluno_id, professor_id) VALUES (9, 'Terrmanh', 6, 7, 8.95, 2.1, 2, 8, 2);
-INSERT INTO universidade.disciplina (id, disciplina, av1, av2, av3, aps1, aps2, aluno_id, professor_id) VALUES (10, 'Helio', 7, 5.6, 5, 2.1, 2, 5, 3);
-INSERT INTO universidade.disciplina (id, disciplina, av1, av2, av3, aps1, aps2, aluno_id, professor_id) VALUES (11, 'Helio', 5.7, 3.9, 6.7, 2.1, 2, 9, 2);
-INSERT INTO universidade.disciplina (id, disciplina, av1, av2, av3, aps1, aps2, aluno_id, professor_id) VALUES (12, 'Helio', 5.99, 0, 4.55, 3, 0, 7, 4);
-INSERT INTO universidade.disciplina (id, disciplina, av1, av2, av3, aps1, aps2, aluno_id, professor_id) VALUES (13, 'Helio', 5, 0, 0, 3, 0, 8, 5);
-INSERT INTO universidade.disciplina (id, disciplina, av1, av2, av3, aps1, aps2, aluno_id, professor_id) VALUES (14, 'Terrmanh', 5, 5.77, 7.67, 2.1, 2, 10, 3);
+INSERT INTO universidade.disciplina (disciplina, av1, av2, av3, aps1, aps2, aluno_id, professor_id) VALUES ('Internet', 6.89, 7, 8.95, 2.1, 2, 1, 1);
+INSERT INTO universidade.disciplina (disciplina, av1, av2, av3, aps1, aps2, aluno_id, professor_id) VALUES ('Terrmanh', 6, 7, 8.95, 2.1, 2, 8, 2);
+INSERT INTO universidade.disciplina (disciplina, av1, av2, av3, aps1, aps2, aluno_id, professor_id) VALUES ('Helio', 4.7, 3.9, 8, 3, 2, 9, 2);
+INSERT INTO universidade.disciplina (disciplina, av1, av2, av3, aps1, aps2, aluno_id, professor_id) VALUES ('Neomica', 5.78, 4.99, 7.67, 2.1, 2, 2, 1);
+INSERT INTO universidade.disciplina (disciplina, av1, av2, av3, aps1, aps2, aluno_id, professor_id) VALUES ('Terrmanh', 6, 7, 8.95, 2.1, 2, 3, 2);
+INSERT INTO universidade.disciplina (disciplina, av1, av2, av3, aps1, aps2, aluno_id, professor_id) VALUES ('Helio', 7, 5.6, 5, 2.1, 2, 5, 3);
+INSERT INTO universidade.disciplina (disciplina, av1, av2, av3, aps1, aps2, aluno_id, professor_id) VALUES ('Helio', 5.7, 3.9, 6.7, 2.1, 2, 9, 1);
+INSERT INTO universidade.disciplina (disciplina, av1, av2, av3, aps1, aps2, aluno_id, professor_id) VALUES ('Helio', 5.99, 0, 4.55, 3, 0, 7, 4);
+INSERT INTO universidade.disciplina (disciplina, av1, av2, av3, aps1, aps2, aluno_id, professor_id) VALUES ('Helio', 5, 0, 0, 3, 0, 8, 5);
+INSERT INTO universidade.disciplina (disciplina, av1, av2, av3, aps1, aps2, aluno_id, professor_id) VALUES ('Terrmanh', 5, 5.77, 7.67, 2.1, 2, 10, 3);

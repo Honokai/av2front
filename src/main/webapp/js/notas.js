@@ -84,17 +84,30 @@ window.addEventListener('load', () => {
         professor.send()
         professor.addEventListener('load', () => {
             let resposta = JSON.parse(professor.responseText)
+            let decisao = document.getElementById('nomeUsuario').innerHTML == 'admin'? true : false
+            let professorNome = document.getElementById('nomeUsuario').innerHTML
+            professorNome = professorNome.toLowerCase()
             for (let index = 0; index < resposta.length; index++) {
-                let elemento = document.createElement('option')
-                elemento.value = resposta[index].id
-                elemento.innerHTML = ''+resposta[index].professor+''
-                selectprofessor.add(elemento)
+                if(decisao == true) {
+                    let elemento = document.createElement('option')
+                    elemento.value = resposta[index].id
+                    elemento.innerHTML = ''+resposta[index].professor+''
+                    selectprofessor.add(elemento)
+                } else {
+                    let lowerCase = resposta[index].professor
+                    lowerCase = lowerCase.toLowerCase()
+                    if(professorNome == lowerCase) {
+                        let elemento = document.createElement('option')
+                        elemento.value = resposta[index].id
+                        elemento.innerHTML = ''+resposta[index].professor+''
+                        selectprofessor.add(elemento)
+                    }
+                }
             }
         })
-
     })
+    
     document.getElementById('professor').addEventListener("change", () => {
-        
         if(document.getElementById('acao').value == "atualizar"){
             let notas = new XMLHttpRequest()
             notas.open("GET","http://localhost:8080/av2front/aluno/nota.jsp?aluno_id="+
@@ -110,9 +123,6 @@ window.addEventListener('load', () => {
                 document.getElementById("aps2").value = resposta[0].aps2
             })
         }
-        
-        
-        
     })
 
 })

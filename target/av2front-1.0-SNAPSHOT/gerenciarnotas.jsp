@@ -107,25 +107,25 @@
                 <div class="row">
                     <div class="col form-group">
                         <label for="av1">Av1</label>
-                        <input class="form-control" id="av1" name="av1" placeholder="0.00" type="number" pattern="[0-1]?[0-8][.][0-9][0-9]"/>
+                        <input class="form-control" id="av1" name="av1" placeholder="0.00" type="text" pattern="[0-1]?[0-8][.][0-9][0-9]"/>
                     </div>
                     <div class="col form-group">
                         <label for="av2">Av2</label>
-                        <input class="form-control" id="av2" name="av2" placeholder="0.00" type="number" pattern="[0-1]?[0-8][.][0-9][0-9]"/>
+                        <input class="form-control" id="av2" name="av2" placeholder="0.00" type="text" pattern="[0-1]?[0-8][.][0-9][0-9]"/>
                     </div>
                     <div class="col form-group">
                         <label for="av3">Av3</label>
-                        <input class="form-control" id="av3" name="av3" placeholder="0.00" type="number" pattern="[0-1]?[0-8][.][0-9][0-9]"/>
+                        <input class="form-control" id="av3" name="av3" placeholder="0.00" type="text" pattern="[0-1]?[0-8][.][0-9][0-9]"/>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col form-group">
                         <label for="aps1">Aps1</label>
-                        <input class="form-control" id="aps1" name="aps1" placeholder="0.00" type="number" pattern="[0-1]?[0-8][.][0-9][0-9]"/>
+                        <input class="form-control" id="aps1" name="aps1" placeholder="0.00" type="text" pattern="[0-1]?[0-8][.][0-9][0-9]"/>
                     </div>
                     <div class="col form-group">
                         <label for="acao">Aps2</label>
-                        <input class="form-control" id="aps2" name="aps2" placeholder="0.00" type="number" pattern="[0-1]?[0-8][.][0-9][0-9]"/>
+                        <input class="form-control" id="aps2" name="aps2" placeholder="0.00" type="text" pattern="[0-1]?[0-8][.][0-9][0-9]"/>
                     </div>
                 </div>
                 <button type="submit" id="submit" class="btn btn-primary">Criar/Atualizar registro</button>

@@ -22,7 +22,7 @@
                 </li>
              <% } else { %>
                 <li class="nav-item">
-                    <strong class="nav-link">Bem, vindo: ${usuario.nome}</strong>
+                    <strong class="nav-link">Bem-vindo, <span id="nomeUsuario">${usuario.nome}</span></strong>
                 </li>
              <% } %>
             <%  if(session.getAttribute("usuario") != null) {

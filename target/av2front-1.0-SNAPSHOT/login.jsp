@@ -27,12 +27,12 @@
                     <h5 class="card-title">Entrar</h5>
                     <form action="ver/validacao.jsp" method="post">
                     <div class="a-esquerda" id="nome">
-                        <label for="usuario">E-mail</label>
-                        <input class="form-control" id="email" name="email" type="text" placeholder="Usuário"></input> 
+                        <label>E-mail</label>
+                        <input class="form-control" id="email" name="email" type="text" placeholder="Usuário"> 
                     </div>
                     <div class="a-esquerda" id="pass">
                         <label for="senha">Senha</label>
-                        <input class="form-control" id="senha" name="senha" type="password" placeholder="Senha"></input> 
+                        <input class="form-control" id="senha" name="senha" type="password" placeholder="Senha">
                     </div>
                         ${message}
                         <% 
