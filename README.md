@@ -26,7 +26,7 @@ No menu superior, selecionar `Run(executar)`, e então `Run Project(av2front)`.
 ### Importando arquivo SQL
 Para que a aplicação funcione em sua total capacidade, temos o arquivo [universidade.sql](universidade.sql), nele está contido toda a estrutura do banco, assim como dados pré-inseridos para testes.
 ### Configurando credenciais de acesso ao banco
-Informe usuário e senha de acesso ao banco no arquivo em `src\main\java\com\av2front` nomeado de [**BancoConexao.java**](src/main/)
+Informe usuário e senha de acesso ao banco no arquivo em `src\main\java\com\av2front` nomeado de [BancoConexao.java](src/main/java/com/av2front/BancoConexao.java)
 ```java
 public class BancoConexao {
     
