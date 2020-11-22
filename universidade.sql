@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS universidade.professor
         primary key,
     professor varchar(120) not null,
     usuario_id int not null,
-    constraint usuario_ibfk_1 foreign key (usuario) references usuarios (id)
+    constraint usuario_ibfk_1 foreign key (usuario_id) references usuarios (id)
 );
 
 CREATE TABLE IF NOT EXISTS universidade.disciplina
